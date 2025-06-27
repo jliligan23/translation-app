@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: translation-app
+    env: python
+    buildCommand: ""
+    startCommand: python app.py
+    envVars:
+      - key: DEEPL_API_KEY
+        sync: false
