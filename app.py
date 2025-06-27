@@ -3,11 +3,12 @@ import requests
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
-
-DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
+load_dotenv()  # Load from .env (for local dev)
 
 app = Flask(__name__)
+
+DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")  # This will work on Render too
+DEEPL_API_URL = "https://api-free.deepl.com/v2/translate"
 
 @app.route("/")
 def index():
